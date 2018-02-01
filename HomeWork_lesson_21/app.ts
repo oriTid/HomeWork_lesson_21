@@ -5,7 +5,7 @@ callObjects(arr);
 
 ///////////// Functions///////////////
 
-function createIFly(): IFly {
+function createIFly(): IFly { //פונה לפונקציית רנדום ויגריל מספר בטווח שאני שולח לו ויצור אובייקט בהתאם
     let rnd: number = random(0, 3);
     switch (rnd) {
         case 0: return new Bird("Water Bird", random(1, 25), "Yellow");
@@ -15,7 +15,7 @@ function createIFly(): IFly {
     }
 }
 
-function initArray(arr: Array<IFly>): void {
+function initArray(arr: Array<IFly>): void {  //אתחול של המערך תוך שימוש בפונקציה  יצירת האובייקטים
 
     for (let i = 0; i < arr.length; i++) {
 
@@ -24,16 +24,19 @@ function initArray(arr: Array<IFly>): void {
 }
 
 
-function callObjects(arr: Array<IFly>): void {
+function callObjects(arr: Array<IFly>): void { // מעבר על המערך להצגת הערכים שלו
 
     for (let i = 0; i < arr.length; i++) {
-        arr[i].fly(random(5, 120));
-        if (arr[i].land())
+        arr[i].fly(random(5, 120)); //  עם שימוש בפונקציית רנדום fly  קריאה לפונקציית 
+        if (arr[i].land()) //  land  קריאה לפונקציית 
             document.write(`Landed OK !! (But hey...Im a boolean that returns TRUE all the time... :)</br></br>`);
         else
             document.write(`Oh no, I crashed ';,,;' !!</br>`);
 
-        if (arr[i] instanceof Bird) {
+        // הצגת המאפיינים הנוספים של האובייקט שבתא 
+        //casting של המערך תוך שימוש בבדיקה של איזה סוג אובייקט זה ואחכ
+
+        if (arr[i] instanceof Bird) {   
             document.write(` Bird's type is: ${(arr[i] as Bird).birdType}</br>`);
             document.write(` Bird's color is: ${(arr[i] as Bird).birdColor}</br>`);
             document.write(` Bird's RANDOM age is: ${(arr[i] as Bird).birdAge}</br>`);

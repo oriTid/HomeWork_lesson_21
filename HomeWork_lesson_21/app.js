@@ -17,11 +17,13 @@ function initArray(arr) {
 }
 function callObjects(arr) {
     for (var i = 0; i < arr.length; i++) {
-        arr[i].fly(random(5, 120));
+        arr[i].fly(random(5, 120)); //  עם שימוש בפונקציית רנדום fly  קריאה לפונקציית 
         if (arr[i].land())
             document.write("Landed OK !! (But hey...Im a boolean that returns TRUE all the time... :)</br></br>");
         else
             document.write("Oh no, I crashed ';,,;' !!</br>");
+        // הצגת המאפיינים הנוספים של האובייקט שבתא 
+        //casting של המערך תוך שימוש בבדיקה של איזה סוג אובייקט זה ואחכ
         if (arr[i] instanceof Bird) {
             document.write(" Bird's type is: " + arr[i].birdType + "</br>");
             document.write(" Bird's color is: " + arr[i].birdColor + "</br>");
